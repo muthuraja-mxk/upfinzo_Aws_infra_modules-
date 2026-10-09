@@ -1,24 +1,3 @@
-# Find the latest Ubuntu 24.04 LTS AMI
-data "aws_ami" "ubuntu" {
-  most_recent = true
-  owners      = ["099720109477"]
-
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-*"]
-  }
-
-  filter {
-    name   = "architecture"
-    values = ["x86_64"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-}
-
 # Generate a new private key
 resource "tls_private_key" "ec2" {
   algorithm = "RSA"
@@ -73,7 +52,7 @@ resource "aws_security_group" "ec2" {
 
 # EC2 instance
 resource "aws_instance" "this" {
-  ami                         = data.aws_ami.ubuntu.id
+  ami                         = var.ami_id
   instance_type               = var.instance_type
   subnet_id                   = var.subnet_id
   vpc_security_group_ids      = [aws_security_group.ec2.id]
@@ -93,3 +72,4 @@ resource "aws_instance" "this" {
     Environment = var.environment
   }
 }
+```
