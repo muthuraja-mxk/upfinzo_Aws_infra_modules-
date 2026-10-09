@@ -3,6 +3,7 @@ module "ec2" {
 
   project_name     = var.project_name
   environment      = var.environment
+  ami_id           = var.ami_id
   vpc_id           = var.vpc_id
   subnet_id        = var.subnet_id
   instance_type    = var.instance_type
