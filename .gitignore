@@ -1,0 +1,12 @@
+# Terraform files
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+
+# Sensitive files
+terraform.tfvars
+*.pem
+
+# Keep provider lock file committed
