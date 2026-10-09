@@ -1,15 +1,10 @@
-aws_region     = "us-east-1"
-aws_account_id = "879381282802"
-
-project_name = "list-software"
-environment  = "production"
-
-vpc_id    = "vpc-012847b88e0cd93e1"
-subnet_id = "subnet-0a373bf67fdfbdeb9"
-
-ami_id        = "ami-04b4f1a9cf54c11d0"
-
-instance_type = "t3.small"
-admin_cidr    = "0.0.0.0/0"
-
-private_key_path = "./ec2-key.pem"
+aws_region         = "us-east-1"
+aws_account_id     = "879381282802"
+project_name       = "list-software"
+environment        = "production"
+vpc_id             = "vpc-012847b88e0cd93e1"
+subnet_id          = "subnet-0a373bf67fdfbdeb9"
+ami_id             = "ami-04b4f1a9cf54c11d0"
+instance_type      = "t3.small"
+admin_cidr         = "0.0.0.0/0"
+private_key_path   = "./ec2-key.pem"
